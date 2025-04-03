@@ -18,5 +18,4 @@ We are also going to have d6 rolls
 - 3-4 → a neutral outcome
 - 5-6 → a good outcome
 - +Modifiers → Based on the player's chosen strengths
-These rolls will be affected by the your strenghts.
 
