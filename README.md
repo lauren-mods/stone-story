@@ -19,3 +19,12 @@ We are also going to have d6 rolls
 - 5-6 → a good outcome
 - +Modifiers → Based on the player's chosen strengths
 
+#### Next challenge
+
+Come up with methods to:
+- add in dice rolls
+  `maybe use let outcome = neutral`
+- have the next part of the story initialise
+- save the player name
+  -- we want a button for this and a text field for user input
+  
