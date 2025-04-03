@@ -4,7 +4,7 @@
 
 ### 3rd April 2025
 
-I had the idea to make a choose your own adventure story game using JavaScript, HTML and CSS. 
+I had the idea to make a choose your own adventure story game using JavaScript, HTML and CSS.
 
 I am thinking of having the following attributes:
 
