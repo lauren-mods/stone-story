@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Choice</title>
+</head>
+
+<body>
+
+    <h2>Choose Your Attribute</h2>
+
+    <!-- Dropdown for attribute selection -->
+    <label for="attribute-select">Choose an attribute: </label>
+    <select id="attribute-select">
+        <option value="Brains">Brains</option>
+        <option value="Brawn">Brawn</option>
+        <option value="Instinct">Instinct</option>
+    </select>
+
+    <!-- Button to submit the choice -->
+    <button id="submit-btn">Submit</button>
+
+    <h3>Your Rolls and Outcome:</h3>
+    <div id="output"></div>
+
+    <script>
+        // Declare modifiers
+        let brainsModifier = 0;
+        let brawnModifier = 0;
+        let instinctModifier = 0;
+
+        // Function to roll a D6 (random number between 1 and 6)
+        function rollD6() {
+            return Math.floor(Math.random() * 6) + 1;
+        }
+
+        // Function to get outcome based on roll
+        function getOutcome(roll) {
+            if (roll >= 5) {
+                return "Good";
+            } else if (roll >= 3) {
+                return "Neutral";
+            } else {
+                return "Bad";
+            }
+        }
+
+        // Function to handle user selection and roll the dice
+        function handleSubmit() {
+            const chosenAttribute = document.getElementById('attribute-select').value;
+
+            // Set the modifiers based on chosen attribute
+            if (chosenAttribute === "Brains") {
+                brainsModifier = 1;
+                brawnModifier = 0;
+                instinctModifier = 0;
+            } else if (chosenAttribute === "Brawn") {
+                brawnModifier = 1;
+                brainsModifier = 0;
+                instinctModifier = 0;
+            } else if (chosenAttribute === "Instinct") {
+                instinctModifier = 1;
+                brainsModifier = 0;
+                brawnModifier = 0;
+            }
+
+            // Rolls for each attribute
+            let brainsRoll = rollD6() + brainsModifier;
+            let brawnRoll = rollD6() + brawnModifier;
+            let instinctRoll = rollD6() + instinctModifier;
+
+            // Prepare the output
+            let outputHTML = `
+                <p><strong>Brains Roll:</strong> ${brainsRoll} - Outcome: ${getOutcome(brainsRoll)}</p>
+                <p><strong>Brawn Roll:</strong> ${brawnRoll} - Outcome: ${getOutcome(brawnRoll)}</p>
+                <p><strong>Instinct Roll:</strong> ${instinctRoll} - Outcome: ${getOutcome(instinctRoll)}</p>
+            `;
+
+            // Display the results
+            document.getElementById('output').innerHTML = outputHTML;
+        }
+
+        // Event listener for button click
+        document.getElementById('submit-btn').addEventListener('click', handleSubmit);
+    </script>
+
+</body>
+
+</html>
