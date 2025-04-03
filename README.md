@@ -24,7 +24,7 @@ We are also going to have d6 rolls
 Come up with methods to:
 - [x] add in dice rolls
   `maybe use let outcome = neutral`
-- [] have the next part of the story initialise
-- [] save the player name
+- [ ] have the next part of the story initialise
+- [ ] save the player name
   -- we want a button for this and a text field for user input
   
