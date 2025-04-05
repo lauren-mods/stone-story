@@ -12,7 +12,23 @@
 
 ## Journal
 
-### 3rd April 2025
+### Day 2
+
+#### Remembering player choices
+
+I researched a bunch of different ways to remember choices and action:
+
+- cookies
+- cache
+- locadata
+
+I did not know that localdata was a thing, so I am now updating all my code so that attribute choice and modifiers are a thing. Also, I learned that the cache is really just for images and videos.
+
+#### Setting the modifiers
+
+Working on a way to set all modifiers but only asking about the first two. 
+
+### Day 1
 
 I had the idea to make a choose your own adventure story game using JavaScript, HTML and CSS.
 
