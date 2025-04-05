@@ -1,5 +1,15 @@
 # Readme
 
+## To Do
+
+- [x] add in dice rolls
+  `maybe use let outcome = neutral`
+- [x] have the next part of the story initialise
+- [ ] save the player name
+- [x] save the player variables
+- [x] have buttons
+- [ ] and a text field for user input
+
 ## Journal
 
 ### 3rd April 2025
@@ -18,13 +28,3 @@ We are also going to have d6 rolls
 - 3-4 → a neutral outcome
 - 5-6 → a good outcome
 - +Modifiers → Based on the player's chosen strengths
-
-#### Next challenge
-
-Come up with methods to:
-
-- [x] add in dice rolls
-  `maybe use let outcome = neutral`
-- [ ] have the next part of the story initialise
-- [ ] save the player name
-  -- we want a button for this and a text field for user input

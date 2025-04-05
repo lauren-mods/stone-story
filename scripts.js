@@ -1,25 +1,54 @@
+// Declare attributes as constants
 const attributeSet = ["Brains", "Brawn", "Instinct"];
-let brainsModifier = 0;
-let brawnModifier = 0;
-let instinctModifier = 0;
+// Declare modifiers as -1 default
+let brainsModifier = -1;
+let brawnModifier = -1;
+let instinctModifier = -1;
 
-function selectPrimaryAttribute(primaryAttribute) {
-    if (attributeSet.includes(primaryAttribute)) {
-        document.getElementById("primaryAttribute").innerText = `You chose: ${primaryAttribute}`;
-        document.getElementById("primaryAttributeSelection").style.display = "none"; //this hides the selection box
-
-        if (primaryAttribute === "Brains") {
-            brainsModifier = 1;
-        }
-        else if (primaryAttribute === "Brawn") {
-            brawnModifier = 1;
-        }
-        else if (primaryAttribute === "Instinct") {
-            instinctModifier = 1;
-        }
-        document.getElementById("modifierScores").innerText = `Your current modifiers are: Brains: ${brainsModifier}, Brawn: ${brawnModifier}, Instinct: ${instinctModifier}`;
-    } else {
-        document.getElementById("primaryAttribute").innerText = "Invalid attribute. Please try again.";
+//start the game using the play button
+document.getElementById("playButton").onclick = function (){
+    console.log("Play button clicked!");
+    document.getElementById("playButton").style.display = "none";
     }
+
+
+//Primary attribute selection function
+
+function selectPrimaryAttribute(primaryAttribute){
+    if (primaryAttribute === "Brains"){
+        brainsModifier = 2; 
+    } else if (primaryAttribute === "Brawn"){
+        brawnModifier = 2;
+    } else if (primaryAttribute === "Instinct"){
+        instinctModifier = 2
+    }
+
+    localStorage.setItem("primaryAttribute",primaryAttribute) //saving the primary attribute choice to local storage
+    localStorage.setItem("brainsModifier", brainsModifier);
+    localStorage.setItem("brawnModifier", brawnModifier)
+    localStorage.setItem("instinctModifier", instinctModifier);
+
+    // update the user interfacte
+    document.getElementById("primaryAttribute").innerText = `You chose ${primaryAttribute} as your primary attribute. Your ${primaryAttribute} modifier is now 2`
+    document.getElementById("primaryAttributeSelection").style.display = "none"; //this hides the selection box
+
+    //Show the next section
+    showSecondaryAttributeOptions
+
+
 }
 
+function updateModifier(attribute, value){
+    if (attribute == "Brains"){brainsModifier+= value};
+    if (attribute == "Brawn"){brawnModifier+= value};
+    if (attribute == "Instinct"){instinctModifier+= value};
+}
+
+function selectPrimaryAttribute(selected) {
+    if (!attributeSet.includes(selected)) return;
+    primaryAttribute = selected;
+    document.getElementById("primaryAttribute").innerText = `You chose ${primaryAttribute}as your primary attribute`;
+    document.getElementById("primaryAttributeSelection").style.display = "none";
+
+
+}
