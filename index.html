@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>stoneStory</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-<h1>Welcome to stoneStory</h1>
-<p>stoneStory is a simple choose your own adventure game, with an element of randomisation!</p>
-<p>Sometimes you will make a choice, other times you will roll dice.</p>
+    <h1>Welcome to stoneStory</h1>
+    <p>stoneStory is a simple choose your own adventure game, with an element of randomisation!</p>
+    <p>Sometimes you will make a choice, other times you will roll dice.</p>
+    <div id="primaryAttributeSelection">
+        <p>Choose your primary attribute:</p>
+        <button onclick="selectPrimaryAttribute('Brains')">Brains</button>
+        <button onclick="selectPrimaryAttribute('Brawn')">Brawn</button>
+        <button onclick="selectPrimaryAttribute('Instinct')">Instinct</button>
+    </div>
+    <div id="primaryAttribute"></div>
+    <div id="modifierScores"></div>
     <script src="scripts.js"></script>
 </body>
+
 </html>
